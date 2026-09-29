@@ -1,0 +1,623 @@
+{
+ "scope": "local_full",
+ "evidence": "REAL component cohorts; exploratory electrical-drift analysis only",
+ "note": "No 168 h burn-in endpoint and no latent-defect labels exist; counts are descriptive, not accuracy.",
+ "default_min_peers_8": [
+  {
+   "dataset_id": "ad620",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 600
+  },
+  {
+   "dataset_id": "ad648",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 40,
+   "UNTRUSTED_NO_VERDICT": 0
+  },
+  {
+   "dataset_id": "capacitor14",
+   "INSUFFICIENT_PEERS": 120,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 0
+  },
+  {
+   "dataset_id": "nds352",
+   "INSUFFICIENT_PEERS": 136,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 8
+  },
+  {
+   "dataset_id": "op484",
+   "INSUFFICIENT_PEERS": 320,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 0
+  },
+  {
+   "dataset_id": "reram",
+   "INSUFFICIENT_PEERS": 37,
+   "MISSING": 13,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 0
+  },
+  {
+   "dataset_id": "u309",
+   "INSUFFICIENT_PEERS": 378,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 0
+  }
+ ],
+ "sensitivity_min_peers_5": [
+  {
+   "dataset_id": "ad620",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 0,
+   "UNTRUSTED_NO_VERDICT": 600,
+   "UNUSUAL_VS_PEERS": 0,
+   "ZERO_MAD": 0
+  },
+  {
+   "dataset_id": "ad648",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 40,
+   "UNTRUSTED_NO_VERDICT": 0,
+   "UNUSUAL_VS_PEERS": 0,
+   "ZERO_MAD": 0
+  },
+  {
+   "dataset_id": "capacitor14",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 115,
+   "UNTRUSTED_NO_VERDICT": 0,
+   "UNUSUAL_VS_PEERS": 5,
+   "ZERO_MAD": 0
+  },
+  {
+   "dataset_id": "nds352",
+   "INSUFFICIENT_PEERS": 34,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 35,
+   "UNTRUSTED_NO_VERDICT": 8,
+   "UNUSUAL_VS_PEERS": 1,
+   "ZERO_MAD": 66
+  },
+  {
+   "dataset_id": "op484",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 308,
+   "UNTRUSTED_NO_VERDICT": 0,
+   "UNUSUAL_VS_PEERS": 12,
+   "ZERO_MAD": 0
+  },
+  {
+   "dataset_id": "reram",
+   "INSUFFICIENT_PEERS": 7,
+   "MISSING": 13,
+   "TYPICAL_VS_PEERS": 18,
+   "UNTRUSTED_NO_VERDICT": 0,
+   "UNUSUAL_VS_PEERS": 2,
+   "ZERO_MAD": 10
+  },
+  {
+   "dataset_id": "u309",
+   "INSUFFICIENT_PEERS": 0,
+   "MISSING": 0,
+   "TYPICAL_VS_PEERS": 126,
+   "UNTRUSTED_NO_VERDICT": 0,
+   "UNUSUAL_VS_PEERS": 0,
+   "ZERO_MAD": 252
+  }
+ ],
+ "reram_standby_current_vs_reported_functional_failure": [
+  {
+   "device_id": "reram:1",
+   "stress_value": 10.0,
+   "value": 0.0096,
+   "change": 0.0001,
+   "z_change": null,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:2",
+   "stress_value": 10.0,
+   "value": 0.01,
+   "change": 0.0001,
+   "z_change": null,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:3",
+   "stress_value": 10.0,
+   "value": 0.0097,
+   "change": 0.0001,
+   "z_change": null,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:4",
+   "stress_value": 10.0,
+   "value": 0.0104,
+   "change": 0.0002,
+   "z_change": null,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:5",
+   "stress_value": 10.0,
+   "value": 0.0104,
+   "change": 0.0001,
+   "z_change": null,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:6",
+   "stress_value": 10.0,
+   "value": 0.0099,
+   "change": 0.0001,
+   "z_change": 0.0,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:7",
+   "stress_value": 10.0,
+   "value": 0.0104,
+   "change": 0.0003,
+   "z_change": 1.348981519,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:8",
+   "stress_value": 10.0,
+   "value": 0.0099,
+   "change": 0.0,
+   "z_change": -0.6744907595,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 75,
+   "first_failure_krad": 125
+  },
+  {
+   "device_id": "reram:9",
+   "stress_value": 10.0,
+   "value": 0.0099,
+   "change": 0.0002,
+   "z_change": 0.6744907595,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:10",
+   "stress_value": 10.0,
+   "value": 0.0097,
+   "change": -0.0001,
+   "z_change": -1.348981519,
+   "exploratory_status": "ZERO_MAD",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:1",
+   "stress_value": 20.0,
+   "value": 0.0099,
+   "change": 0.0004,
+   "z_change": 0.0,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:2",
+   "stress_value": 20.0,
+   "value": 0.0101,
+   "change": 0.0002,
+   "z_change": -1.348981519,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:3",
+   "stress_value": 20.0,
+   "value": 0.01,
+   "change": 0.0004,
+   "z_change": 0.0,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:4",
+   "stress_value": 20.0,
+   "value": 0.0108,
+   "change": 0.0006,
+   "z_change": 1.348981519,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:5",
+   "stress_value": 20.0,
+   "value": 0.0106,
+   "change": 0.0003,
+   "z_change": -0.6744907595,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:6",
+   "stress_value": 20.0,
+   "value": 0.0102,
+   "change": 0.0004,
+   "z_change": 0.0,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:7",
+   "stress_value": 20.0,
+   "value": 0.0106,
+   "change": 0.0005,
+   "z_change": 0.6744907595,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:8",
+   "stress_value": 20.0,
+   "value": 0.0101,
+   "change": 0.0002,
+   "z_change": -1.348981519,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 75,
+   "first_failure_krad": 125
+  },
+  {
+   "device_id": "reram:9",
+   "stress_value": 20.0,
+   "value": 0.0102,
+   "change": 0.0005,
+   "z_change": 0.6744907595,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:10",
+   "stress_value": 20.0,
+   "value": 0.0099,
+   "change": 0.0001,
+   "z_change": -2.0234722784,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:1",
+   "stress_value": 50.0,
+   "value": 0.0146,
+   "change": 0.0051,
+   "z_change": 2.0234722784,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:2",
+   "stress_value": 50.0,
+   "value": 0.0141,
+   "change": 0.0042,
+   "z_change": 0.0,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:3",
+   "stress_value": 50.0,
+   "value": 0.0135,
+   "change": 0.0039,
+   "z_change": -0.6744907595,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:4",
+   "stress_value": 50.0,
+   "value": 0.0215,
+   "change": 0.0113,
+   "z_change": 15.9629479743,
+   "exploratory_status": "UNUSUAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:5",
+   "stress_value": 50.0,
+   "value": 0.0144,
+   "change": 0.0041,
+   "z_change": -0.2248302532,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:6",
+   "stress_value": 50.0,
+   "value": 0.266,
+   "change": 0.2562,
+   "z_change": 121.2156250602,
+   "exploratory_status": "UNUSUAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:7",
+   "stress_value": 50.0,
+   "value": 0.0147,
+   "change": 0.0046,
+   "z_change": 0.0,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:8",
+   "stress_value": 50.0,
+   "value": 0.0131,
+   "change": 0.0032,
+   "z_change": -0.6744907595,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 75,
+   "first_failure_krad": 125
+  },
+  {
+   "device_id": "reram:9",
+   "stress_value": 50.0,
+   "value": 0.0162,
+   "change": 0.0065,
+   "z_change": 0.9153803164,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:10",
+   "stress_value": 50.0,
+   "value": 0.013,
+   "change": 0.0032,
+   "z_change": -0.6744907595,
+   "exploratory_status": "TYPICAL_VS_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:1",
+   "stress_value": 75.0,
+   "value": 0.954,
+   "change": 0.9445,
+   "z_change": -0.5617826308,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:2",
+   "stress_value": 75.0,
+   "value": 0.839,
+   "change": 0.8291,
+   "z_change": -0.7871988881,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:3",
+   "stress_value": 75.0,
+   "value": 6.74,
+   "change": 6.7304,
+   "z_change": 10.740088453,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:4",
+   "stress_value": 75.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:5",
+   "stress_value": 75.0,
+   "value": 1.53,
+   "change": 1.5197,
+   "z_change": 0.5617826308,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:6",
+   "stress_value": 75.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:7",
+   "stress_value": 75.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:8",
+   "stress_value": 75.0,
+   "value": 0.161,
+   "change": 0.1511,
+   "z_change": -0.6744907595,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 75,
+   "first_failure_krad": 125
+  },
+  {
+   "device_id": "reram:9",
+   "stress_value": 75.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:10",
+   "stress_value": 75.0,
+   "value": 8.39,
+   "change": 8.3802,
+   "z_change": 0.6744907595,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:1",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:2",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:3",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:4",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:5",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  },
+  {
+   "device_id": "reram:6",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:7",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:8",
+   "stress_value": 125.0,
+   "value": 3.67,
+   "change": 3.6601,
+   "z_change": null,
+   "exploratory_status": "INSUFFICIENT_PEERS",
+   "last_functional_krad": 75,
+   "first_failure_krad": 125
+  },
+  {
+   "device_id": "reram:9",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 20,
+   "first_failure_krad": 50
+  },
+  {
+   "device_id": "reram:10",
+   "stress_value": 125.0,
+   "value": null,
+   "change": null,
+   "z_change": null,
+   "exploratory_status": "MISSING",
+   "last_functional_krad": 50,
+   "first_failure_krad": 75
+  }
+ ]
+}

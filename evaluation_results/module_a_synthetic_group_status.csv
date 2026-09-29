@@ -1,0 +1,6 @@
+split,group_status,n
+edge_test,INSUFFICIENT_PEERS,112
+edge_test,VALID,84
+ood_test,VALID,672
+test,VALID,2100
+validation,VALID,1050

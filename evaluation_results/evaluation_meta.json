@@ -1,0 +1,10 @@
+{
+ "model_version": "drishti-0.1.0/A:749f3fff65152311/B:2ba4eaf285832628",
+ "thresholds_module_a": {
+  "robust_rule": 3.5,
+  "isolation_forest": 0.5603065394920763,
+  "ecod": 6.748628256475948,
+  "ensemble": 0.9436292582828455
+ },
+ "evidence_note": "Synthetic metrics are generator-dependent demonstration evidence only."
+}

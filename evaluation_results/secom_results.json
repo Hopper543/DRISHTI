@@ -1,0 +1,98 @@
+{
+ "dataset": "UCI SECOM (CC BY 4.0)",
+ "evidence": "REAL_PROCESS_DATA_NOT_BURN_IN",
+ "n_features_used": 468,
+ "n_calibration_known_pass": 182,
+ "protocol": "Features with >0 non-missing values and >1 unique value on TRAIN; median imputation fitted on TRAIN; detectors fitted on TRAIN; threshold = finite-sample 95% quantile of scores on known-pass CALIBRATION rows; validation and test scored once with no tuning.",
+ "caveat": "Chronological drift breaks exchangeability; no false-alarm guarantee. Unsupervised detectors on anonymous process features are not expected to find these failures.",
+ "results": {
+  "validation": {
+   "isolation_forest": {
+    "n": 180,
+    "n_fail": 7,
+    "threshold": 0.44769310406262275,
+    "tp": 1,
+    "fp": 9,
+    "fn": 6,
+    "tn": 164,
+    "recall": 0.14285714285714285,
+    "false_positive_rate": 0.05202312138728324,
+    "roc_auc": 0.6052848885218828,
+    "average_precision": 0.07479159780924262,
+    "baseline": true
+   },
+   "ecod": {
+    "n": 180,
+    "n_fail": 7,
+    "threshold": 853.0573228331348,
+    "tp": 2,
+    "fp": 6,
+    "fn": 5,
+    "tn": 167,
+    "recall": 0.2857142857142857,
+    "false_positive_rate": 0.03468208092485549,
+    "roc_auc": 0.5317919075144508,
+    "average_precision": 0.12401519365407494,
+    "baseline": false
+   },
+   "ensemble_rank_mean": {
+    "n": 180,
+    "n_fail": 7,
+    "threshold": 0.9780487804878049,
+    "tp": 1,
+    "fp": 6,
+    "fn": 6,
+    "tn": 167,
+    "recall": 0.14285714285714285,
+    "false_positive_rate": 0.03468208092485549,
+    "roc_auc": 0.5809248554913294,
+    "average_precision": 0.08876735450587472,
+    "baseline": false
+   }
+  },
+  "test": {
+   "isolation_forest": {
+    "n": 380,
+    "n_fail": 23,
+    "threshold": 0.44769310406262275,
+    "tp": 0,
+    "fp": 30,
+    "fn": 23,
+    "tn": 327,
+    "recall": 0.0,
+    "false_positive_rate": 0.08403361344537816,
+    "roc_auc": 0.44318597004019,
+    "average_precision": 0.05337784504836617,
+    "baseline": true
+   },
+   "ecod": {
+    "n": 380,
+    "n_fail": 23,
+    "threshold": 853.0573228331348,
+    "tp": 0,
+    "fp": 15,
+    "fn": 23,
+    "tn": 342,
+    "recall": 0.0,
+    "false_positive_rate": 0.04201680672268908,
+    "roc_auc": 0.49762513701132627,
+    "average_precision": 0.06779880985167419,
+    "baseline": false
+   },
+   "ensemble_rank_mean": {
+    "n": 380,
+    "n_fail": 23,
+    "threshold": 0.9780487804878049,
+    "tp": 1,
+    "fp": 20,
+    "fn": 22,
+    "tn": 337,
+    "recall": 0.043478260869565216,
+    "false_positive_rate": 0.056022408963585436,
+    "roc_auc": 0.48258433808305934,
+    "average_precision": 0.062448095794347416,
+    "baseline": false
+   }
+  }
+ }
+}

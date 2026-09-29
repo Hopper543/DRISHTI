@@ -1,0 +1,12 @@
+truth,PASS,ESCALATE,FAIL,split
+healthy,470,260,0,test
+latent_defect_within_spec,84,46,0,test
+measurement_fault,0,36,0,test
+out_of_spec_at_168h,0,4,0,test
+healthy,64,49,0,ood_test
+latent_defect_within_spec,14,9,0,ood_test
+measurement_fault,0,8,0,ood_test
+out_of_spec_at_168h,0,137,7,ood_test
+healthy,1,66,0,edge_test
+latent_defect_within_spec,2,7,0,edge_test
+measurement_fault,0,8,0,edge_test
