@@ -75,6 +75,10 @@ with tab1:
             hovertemplate=hover))
     fig.update_layout(height=460, xaxis_title=f"24 h value [{unit}]", yaxis_title=f"change 0→24 h [{unit}]",
                       legend_title="Device decision (this parameter)", margin=dict(t=30, l=10, r=10, b=10))
+    if lg.status == "VALID" and st.toggle("Zoom to the peer reference band (outliers may fall outside the view)"):
+        bx, by = 2 * k * MAD_K * lg.mad_level, 2 * k * MAD_K * lg.mad_change
+        fig.update_xaxes(range=[lg.median_level - bx, lg.median_level + bx])
+        fig.update_yaxes(range=[lg.median_change - by, lg.median_change + by])
     st.plotly_chart(fig, width="stretch")
     st.caption(f"Shaded box: robust reference band, peer median ± {k} × 1.4826 × MAD on each axis (only when "
                "the peer group is valid). Diamonds: Module A unusual level/change. Scores are statistical "

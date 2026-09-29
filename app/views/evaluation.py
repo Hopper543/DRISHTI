@@ -42,9 +42,11 @@ with t_a:
                 "faults only. Thresholds: robust |z| ≥ 3.5 (fixed a priori); IF/ECOD/ensemble at a 2% "
                 "healthy-parameter flag rate on validation lots.")
     fig = px.bar(det, x="method", y="recall_detectable_24h", color="split", barmode="group",
-                 hover_data=["healthy_flag_rate", "roc_auc", "average_precision"],
+                 hover_data=["n_scored", "healthy_flag_rate", "roc_auc", "average_precision"],
                  labels={"recall_detectable_24h": "recall (24 h-detectable planted anomalies)"}, height=360)
     st.plotly_chart(fig, width="stretch")
+    st.caption("Edge / small-lot bars rest on very few scorable rows (most small-lot rows cannot be peer-scored); "
+               "treat them as anecdotal.")
     show = det[["split", "method", "threshold", "n_scored", "n_not_scored", "tp", "fp", "fn", "tn", "healthy_flag_rate",
                 "recall_detectable_24h", "recall_all_planted", "precision", "roc_auc", "average_precision"]]
     st.dataframe(show, hide_index=True, width="stretch",

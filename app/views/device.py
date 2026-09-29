@@ -89,7 +89,7 @@ for tab, r in zip(tabs, p.itertuples()):
             st.markdown(f"**Outcome:** {decision_badge(r.decision, r.basis)} by rule **{r.rule}**",
                         unsafe_allow_html=True)
             ev = pd.DataFrame(parameter_evidence(r), columns=["Evidence", "Value"])
-            st.dataframe(ev, hide_index=True, width="stretch")
+            st.table(ev.set_index("Evidence"))  # static table wraps long values
         st.markdown("**Why**")
         for s in parameter_sentences(r):
             st.markdown(f"- {s}")

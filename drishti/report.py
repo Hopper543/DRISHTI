@@ -59,6 +59,7 @@ def device_chart_png(run, device_id: str, parameter: str) -> bytes:
 def _styles():
     ss = getSampleStyleSheet()
     ss.add(ParagraphStyle("Small", parent=ss["BodyText"], fontSize=7.5, leading=9.5))
+    ss.add(ParagraphStyle("Cell", parent=ss["BodyText"], fontSize=7, leading=8.5, wordWrap="CJK"))
     ss.add(ParagraphStyle("Banner", parent=ss["BodyText"], fontSize=8, leading=10, textColor=colors.HexColor("#5f3700"),
                           backColor=colors.HexColor("#fff4e0"), borderPadding=5))
     return ss
@@ -93,17 +94,25 @@ def build_pdf(run, focus_device: str | None = None, max_detail: int = MAX_DETAIL
     rows = [["Device", "Lot", "Part", "Decision", "Basis", "Driving parameter(s)", "Reason codes"]]
     order = {"FAIL": 0, "ESCALATE": 1, "PASS": 2}
     devs = run.devices.assign(_o=run.devices.decision.map(order)).sort_values(["_o", "device_id"])
+    def cell(v):
+        # Paragraphs wrap; underscores get a zero-width break opportunity.
+        return Paragraph(str(v).replace(",", ", "), ss["Cell"])
+
     for r in devs.itertuples():
         codes = [c for c in r.reason_codes if c not in ("DEMO_SPEC_NOT_APPROVED", "B_INTERVAL_INSIDE")]
-        rows.append([r.device_id, r.lot_id, r.part_number, r.decision, r.basis, r.driving_parameters or "-",
-                     Paragraph(", ".join(codes) or "-", ss["Small"])])
-    t = _table(rows, [30 * mm, 17 * mm, 22 * mm, 17 * mm, 26 * mm, 28 * mm, 42 * mm])
+        rows.append([cell(r.device_id), cell(r.lot_id), cell(r.part_number), r.decision, cell(r.basis),
+                     cell(r.driving_parameters or "-"), cell(", ".join(codes) or "-")])
+    t = _table(rows, [33 * mm, 22 * mm, 21 * mm, 17 * mm, 24 * mm, 27 * mm, 38 * mm])
     for i, r in enumerate(devs.itertuples(), start=1):
         t.setStyle(TableStyle([("TEXTCOLOR", (3, i), (3, i), DECISION_COLOR.get(r.decision, colors.black))]))
     el.append(t)
 
     # ---- details ------------------------------------------------------------
-    detail = devs[devs.decision != "PASS"].device_id.tolist()
+    # Round-robin across lots so the evidence pages cover every lot / case.
+    flagged = devs[devs.decision != "PASS"]
+    per_lot = [g.device_id.tolist() for _, g in flagged.groupby("lot_id", sort=False)]
+    detail = [d for i in range(max(map(len, per_lot), default=0)) for lot in per_lot if i < len(lot)
+              for d in [lot[i]]]
     if focus_device:
         detail = [focus_device] + [d for d in detail if d != focus_device]
     detail = detail[:max_detail]

@@ -1,0 +1,3 @@
+# Dev-only tools (screenshots, PDF rasterising). Not needed to run DRISHTI.
+playwright==1.63.0
+pypdfium2==5.13.0
