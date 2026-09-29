@@ -12,3 +12,6 @@ maxUploadSize = 50
 
 [browser]
 gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"   # hide developer options such as "Deploy" in the judge demo

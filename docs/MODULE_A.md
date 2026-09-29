@@ -59,6 +59,11 @@ corroborating evidence on the device page. Test-lot results are in [EVALUATION.m
 
 ## Historical lot comparison (distribution shift)
 
+The historical reference (detectors, pooled distributions, lot medians) is keyed by part/parameter only and was
+built from synthetic lots measured under one fixed context (125 °C stress, 25 °C measurement). Uploads under a
+different `test_condition` are peer-compared correctly within their own condition group, but their historical
+comparison is against that single reference context; a real deployment needs a reference per condition.
+
 Peer comparison cannot see a lot that is shifted as a whole. For each valid group DRISHTI compares the lot
 median level and median change with the medians of the 90 historical training lots (robust z, threshold ±4) →
 `A_LOT_SHIFT`, and the lot MAD with the median within-lot MAD (ratio ≥ 3) → `A_LOT_SPREAD`. Every device of a
