@@ -58,6 +58,9 @@ Run the tests:
 .venv\Scripts\python scripts/evaluate.py
 ```
 ```bash
+.venv\Scripts\python scripts/generate_synthetic.py --check
+```
+```bash
 .venv\Scripts\python scripts/build_demo_fixtures.py
 ```
 ```bash
@@ -99,7 +102,7 @@ models/         Saved Module A reference + detectors, Module B boosters, calibra
 data/demo/      SYNTHETIC fixture (project generated)        data/public/  redistributable REAL subsets + SECOM
 data/fixtures/  demo batch, example upload, blank template    data/local/   git-ignored local-only data
 evaluation_results/  outputs of scripts/evaluate.py          docs/  documentation, screenshots, sample report
-scripts/        prepare_data, train, evaluate, build_demo_fixtures, generate_sample_report, take_screenshots, check_repo
+scripts/        prepare_data, generate_synthetic, train, evaluate, build_demo_fixtures, generate_sample_report, take_screenshots, check_repo
 tests/          pytest suite incl. end-to-end and dashboard (AppTest) tests
 ```
 

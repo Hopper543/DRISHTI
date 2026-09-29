@@ -13,8 +13,9 @@
 | `tests/test_app.py` | Streamlit AppTest: overview renders; after **Load demo** every page renders without exceptions; device page shows the SYN_L159_D009 reasons; reports page builds a PDF |
 
 CI (`.github/workflows/ci.yml`) installs `requirements.txt` on Ubuntu with **Python 3.11 and 3.12**, runs
-`scripts/check_repo.py` (no large/banned files, no local-only data), verifies model artifacts against their
-manifest hashes, and runs the full suite.
+`scripts/check_repo.py` (no large/banned files, no local-only data), regenerates the synthetic fixture from its
+seed and compares it with the committed files, verifies model artifacts against their manifest hashes, and runs
+the full suite. pytest scratch goes to the git-ignored `runtime/pytest`.
 
 ## Browser verification (performed 29–30 Sep 2026)
 
@@ -33,6 +34,15 @@ In a local browser against `streamlit run app/streamlit_app.py`:
 * A bug in the Module B evaluation tab (pandas `melt` name clash) and a crash on the reports page when the audit
   log had no run entries were found this way and fixed; both are now covered by `tests/test_app.py`.
 
+Additional checks with headless Edge (Playwright) on 30 Sep 2026:
+
+* **Narrow viewport (390 × 844, mobile emulation):** overview, Load demo, device and lot pages render with no
+  horizontal page scroll; charts, tabs and evidence stack vertically. Metric tiles stack one per row, which makes
+  the lot page long but readable.
+* **Real-data upload route:** a U309 file with radiation dose copied into `burn_in_hours` was refused
+  ("Radiation dose must not be converted into thermal burn-in hours"); the unmodified U309 file was accepted and
+  plotted against the dose axis with controls dotted.
+
 Screenshots in `docs/screenshots/` were captured with headless Microsoft Edge via Playwright
 (`scripts/take_screenshots.py`) and reviewed for readability; the sample PDF was rasterised and reviewed, which
 led to fixing table-cell wrapping.
@@ -43,7 +53,7 @@ led to fixing table-cell wrapping.
   Downloads folder); the bytes behind them are tested (`test_e2e.py`, `test_app.py`).
 * Loading a page by direct URL starts a new Streamlit session (state is per session); in-app navigation keeps
   the run. This is standard Streamlit behaviour.
-* Mobile/narrow layouts were not reviewed.
+* Narrow layouts were checked at one phone size only, in headless Edge; no physical devices.
 * The dashboard was exercised with Python 3.11 on Windows; CI covers 3.11/3.12 on Linux for the core and
   AppTest pages, not a live browser.
 * Evaluation counts for local-only real sources (NDS352, AD648, capacitor #14) cannot be reproduced from a clone

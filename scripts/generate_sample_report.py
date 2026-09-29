@@ -19,7 +19,8 @@ OUT = ROOT / "docs" / "sample_report"
 
 
 def main() -> None:
-    with tempfile.TemporaryDirectory() as tmp:
+    (ROOT / "runtime").mkdir(exist_ok=True)  # git-ignored scratch on the repo drive
+    with tempfile.TemporaryDirectory(dir=ROOT / "runtime") as tmp:
         os.environ["DRISHTI_RUNTIME_DIR"] = tmp
         import pandas as pd
 

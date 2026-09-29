@@ -63,7 +63,9 @@ package but not opened or included; its `scripts/download_optional.py` handles t
 
 ## Synthetic fixture details
 
-See `data/demo/generator_assumptions.json` and the dataset package's `scripts/generate_synthetic.py`. Splits:
+See `data/demo/generator_assumptions.json` and `scripts/generate_synthetic.py` (copied verbatim from the dataset
+package, seed 26170). `python scripts/generate_synthetic.py --check` regenerates the fixture and confirms it is
+identical to the committed `data/demo/` files; CI runs this check. Splits:
 90 train, 15 validation, 45 calibration, 30 ordinary test, 12 shifted test, 12 edge lots; no device or lot
 crosses a split. The demo batch (`data/fixtures/demo_batch_SYNTHETIC.csv`) contains five whole held-out lots
 unchanged plus **one illustrative lot** `ILLUSTRATIVE_Q155` — lot SYN_L155 with threshold voltage rounded to
