@@ -72,7 +72,7 @@ def validate_early_inputs(raw: pd.DataFrame, registry: SpecRegistry) -> Validati
     future = sorted(c for c in f.columns if (m := FUTURE_READING.match(c)) and float(m.group(1)) > 24)
     if leaked or future:
         rep.errors.append(
-            f"Column(s) {leaked + future} contain endpoint, label or post-24 h information. A 24 h screening "
+            f"Column(s) {sorted(set(leaked + future))} contain endpoint, label or post-24 h information. A 24 h screening "
             "decision may only use value_0h and value_24h; remove these columns.")
     if rep.errors:
         return rep
