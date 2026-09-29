@@ -1,0 +1,11 @@
+device_id,last_functional_krad,first_failure_krad,label_type,source_page,notes
+reram:1,50,75,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:2,50,75,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:3,50,75,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:4,20,50,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:5,50,75,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:6,20,50,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:7,20,50,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:8,75,125,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:9,20,50,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth
+reram:10,50,75,reported_functional_failure_interval,9,interval censored; intermittent/retest behavior detailed on pages 11-12; not latent-defect truth

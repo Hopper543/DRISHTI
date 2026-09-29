@@ -1,0 +1,15 @@
+# Direct dependencies (unpinned). The pinned, tested set is requirements.txt.
+numpy
+pandas
+scipy
+scikit-learn
+pyarrow
+lightgbm
+pyod
+streamlit
+plotly
+reportlab
+matplotlib
+joblib
+pyyaml
+pytest

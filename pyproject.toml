@@ -1,0 +1,19 @@
+[project]
+name = "drishti"
+version = "0.1.0"
+description = "DRISHTI: lot-relative anomaly detection and early forecasting for component burn-in screening (SIH 2026 PS 26170 prototype)"
+requires-python = ">=3.11,<3.14"
+readme = "README.md"
+authors = [{ name = "Team Agamemnon" }]
+
+[tool.setuptools]
+packages = ["drishti"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

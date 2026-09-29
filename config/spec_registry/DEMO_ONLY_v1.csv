@@ -1,0 +1,8 @@
+part_number,parameter,unit,spec_lower,spec_upper,spec_origin,approved_for_production,revision,drift_direction_of_concern,note
+DEMO_MEMORY,leakage_current,uA,0,50.0,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,increase,Synthetic demo family; limit is not a datasheet value
+DEMO_MEMORY,supply_current,mA,0,6.0,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,increase,Synthetic demo family; limit is not a datasheet value
+DEMO_OPAMP,input_bias_current,nA,0,2.0,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,increase,Synthetic demo family; limit is not a datasheet value
+DEMO_OPAMP,input_offset_voltage,uV,-125,125.0,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,both,Signed parameter; synthetic demo family
+DEMO_OPAMP,quiescent_current,mA,0,1.3,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,increase,Synthetic demo family; limit is not a datasheet value
+DEMO_MOSFET,RDS_on,ohm,0,0.5,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,increase,Synthetic demo family; limit is not a datasheet value
+DEMO_MOSFET,threshold_voltage,V,1,2.5,DEMONSTRATION_ASSUMPTION,False,DEMO_ONLY_v1,both,Synthetic demo family; limit is not a datasheet value

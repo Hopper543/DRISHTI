@@ -1,0 +1,153 @@
+{
+ "domain": {
+  "DEMO_MEMORY__leakage_current": {
+   "value_0h": [
+    7.745018926728738,
+    30.599348105976855
+   ],
+   "value_24h": [
+    7.997710706464558,
+    30.953954215906382
+   ],
+   "change": [
+    0.08432560230586804,
+    16.047606423876363
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  },
+  "DEMO_MEMORY__supply_current": {
+   "value_0h": [
+    3.4728231778251475,
+    5.157306100405915
+   ],
+   "value_24h": [
+    3.4895901202746216,
+    5.197260893969788
+   ],
+   "change": [
+    -0.028979478413320346,
+    0.6978546520061747
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  },
+  "DEMO_MOSFET__RDS_on": {
+   "value_0h": [
+    0.2711677011801288,
+    0.42147172473060485
+   ],
+   "value_24h": [
+    0.2736990206030678,
+    0.42619169337545737
+   ],
+   "change": [
+    -0.00023405185832088533,
+    0.07692461804446374
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  },
+  "DEMO_MOSFET__threshold_voltage": {
+   "value_0h": [
+    1.5788320695904838,
+    2.2869661933943686
+   ],
+   "value_24h": [
+    1.591869074172078,
+    2.2864936967123644
+   ],
+   "change": [
+    -0.007515642858012207,
+    0.2651299037168789
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  },
+  "DEMO_OPAMP__input_bias_current": {
+   "value_0h": [
+    0.42747411891516485,
+    1.3079757719178158
+   ],
+   "value_24h": [
+    0.4440346081975095,
+    1.324621687619747
+   ],
+   "change": [
+    0.0039031089187415756,
+    0.5289101181670888
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  },
+  "DEMO_OPAMP__input_offset_voltage": {
+   "value_0h": [
+    12.343600511604764,
+    73.2167298680926
+   ],
+   "value_24h": [
+    11.504335673072816,
+    74.03391680800124
+   ],
+   "change": [
+    -1.4232751887701884,
+    31.864132904290905
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  },
+  "DEMO_OPAMP__quiescent_current": {
+   "value_0h": [
+    0.7680151109640018,
+    1.108120731625904
+   ],
+   "value_24h": [
+    0.7739443029348634,
+    1.123104932780564
+   ],
+   "change": [
+    -0.004433875506033596,
+    0.14865991838425457
+   ],
+   "quantiles": [
+    0.005,
+    0.995
+   ],
+   "n_train": 900,
+   "n_train_lots": 30
+  }
+ },
+ "units": {
+  "DEMO_MEMORY__leakage_current": "uA",
+  "DEMO_MEMORY__supply_current": "mA",
+  "DEMO_MOSFET__RDS_on": "ohm",
+  "DEMO_MOSFET__threshold_voltage": "V",
+  "DEMO_OPAMP__input_bias_current": "nA",
+  "DEMO_OPAMP__input_offset_voltage": "uV",
+  "DEMO_OPAMP__quiescent_current": "mA"
+ }
+}

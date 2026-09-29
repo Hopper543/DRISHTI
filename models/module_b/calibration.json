@@ -1,0 +1,51 @@
+{
+ "DEMO_MEMORY__leakage_current": {
+  "margin": 9.771116073985056,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ },
+ "DEMO_MEMORY__supply_current": {
+  "margin": 0.6035471673945598,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ },
+ "DEMO_MOSFET__RDS_on": {
+  "margin": 0.08260454472117185,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ },
+ "DEMO_MOSFET__threshold_voltage": {
+  "margin": 0.31436590685444354,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ },
+ "DEMO_OPAMP__input_bias_current": {
+  "margin": 0.5746976998164612,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ },
+ "DEMO_OPAMP__input_offset_voltage": {
+  "margin": 29.839889467429952,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ },
+ "DEMO_OPAMP__quiescent_current": {
+  "margin": 0.1965577222759457,
+  "n_calibration_lots": 15,
+  "n_calibration_rows": 450,
+  "coverage_target": 0.9,
+  "method": "CQR, lot-max nonconformity, finite-sample quantile"
+ }
+}

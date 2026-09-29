@@ -1,0 +1,33 @@
+# Python / environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Secrets
+.env
+*.key
+secrets.toml
+.streamlit/secrets.toml
+
+# Local-only data (not redistributable, or too large). See docs/DATA.md.
+data/local/
+*.zip
+*.mat
+raw/
+
+# Runtime outputs (audit log, generated reports, scratch)
+runtime/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,53 @@
+{
+ "features": [
+  "value_0h",
+  "value_24h"
+ ],
+ "target": "value_168h",
+ "join_key": "sample_id",
+ "model_family": "LightGBM quantile regression (q05, q50, q95) per part_number/parameter",
+ "lightgbm_params": {
+  "n_estimators": 120,
+  "max_depth": 4,
+  "num_leaves": 12,
+  "min_child_samples": 30,
+  "learning_rate": 0.05,
+  "random_state": 26170,
+  "n_jobs": 2,
+  "verbosity": -1
+ },
+ "training_split": "train",
+ "calibration_split": "calibration",
+ "evidence": "SYNTHETIC_ONLY",
+ "lightgbm_version": "4.7.0",
+ "created_utc": "2026-09-29T18:28:59+00:00",
+ "drishti_version": "0.1.0",
+ "training_inputs_sha256": "adb8587a3c52735589f0b7fa0907bcf10acf7a8eafb541fc42cd96c166f11bf4",
+ "numpy_version": "2.4.6",
+ "files": {
+  "DEMO_MEMORY__leakage_current__q05.txt": "17cae8e7c1ddeca56e4d34a5a9efce697b4dfe2e3b244fe48df30cf66d5697b1",
+  "DEMO_MEMORY__leakage_current__q50.txt": "87d77339fe1b609584786cf49bc344bf43372b2cd38704211aaab7f76c6a4174",
+  "DEMO_MEMORY__leakage_current__q95.txt": "90dac8f74fc8fbff225b483825a933a21bc68840f2802161a2f9e4a0bead3a21",
+  "DEMO_MEMORY__supply_current__q05.txt": "ddba88ac20776a83f5acf797ac5a0363d40a73010a5e23dc5aee5ca44f3be557",
+  "DEMO_MEMORY__supply_current__q50.txt": "596dc7fb259500886ca60f899687403b276a9fa0177485ea39d32613744a9758",
+  "DEMO_MEMORY__supply_current__q95.txt": "58cd32e7d160472edc9f07e18d322feb2c19d84118553195d71a2a994df5d282",
+  "DEMO_MOSFET__RDS_on__q05.txt": "132fef215eca46ad1cb998d38c92fae0267fd18d480ad51394d440e610552754",
+  "DEMO_MOSFET__RDS_on__q50.txt": "499215f8f8fc2f11fd80c7e3d947a1b28e582cdfdbd514fb4750067cb8454600",
+  "DEMO_MOSFET__RDS_on__q95.txt": "e207a9ce035e6674b17c9cc23953e8dbb8b2184b0f834dfc91c0d3a4f4bcb70a",
+  "DEMO_MOSFET__threshold_voltage__q05.txt": "75629fea6c0dce51a658a4259c40470d566d494ffaf780e95c48e08e5ff03f15",
+  "DEMO_MOSFET__threshold_voltage__q50.txt": "75f8f8188bda961c13461a0f957486db2fa9e210e51b9bc39ae9bfc6559c98b4",
+  "DEMO_MOSFET__threshold_voltage__q95.txt": "15514dea598716c76cadeb807a4826b727f74be590600b94934372a5d83f1529",
+  "DEMO_OPAMP__input_bias_current__q05.txt": "0731b31c473faf78d10676baf53d2fbf002fc6122d2eabde1a7bac935be1b790",
+  "DEMO_OPAMP__input_bias_current__q50.txt": "9b4fbdd321acdc1625c87853f4262069b775dd8919c0e79090f2051201431fbe",
+  "DEMO_OPAMP__input_bias_current__q95.txt": "5d42e1ccf35d09401753a51813905a20fa2c20d8d47135b82a29394c6518974d",
+  "DEMO_OPAMP__input_offset_voltage__q05.txt": "5ed441c562307fa5ede1c31592e056926a84c4bcac60fa23fde0186ce8874d7d",
+  "DEMO_OPAMP__input_offset_voltage__q50.txt": "f3d6c0c3799797964a2050511e5874f305c8847689142edaf3891c3b2a71aa8c",
+  "DEMO_OPAMP__input_offset_voltage__q95.txt": "11c1c1f4ae2129520eef484a4fc5567fe5afa3fe7deca2765d1f29495576052f",
+  "DEMO_OPAMP__quiescent_current__q05.txt": "43a153e2157d0ef559c54aa68138341840c867e58f184ec1b3c5e97be4b31cfb",
+  "DEMO_OPAMP__quiescent_current__q50.txt": "f93e55ff398df6c8fe7de0214789babc9186ab964d9e819227dec09d95de0867",
+  "DEMO_OPAMP__quiescent_current__q95.txt": "c8316718c7db2a7707003ea64ebcd6b949661dfad049aae298ad0ed58365369e",
+  "calibration.json": "95da9fd84d1fc9b349d0d6c423d8803b6bbacb28db2255bd91a4e565109632c0",
+  "domain.json": "79a0da42b9ba4798e11cff80b62881aa52bac6594c1624d3870d100485e5532b"
+ },
+ "model_version_hash": "2ba4eaf285832628"
+}

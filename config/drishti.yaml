@@ -1,0 +1,49 @@
+# DRISHTI runtime configuration. All thresholds here are DEMO policy choices
+# for the screening-round prototype, not qualification limits.
+
+mode: demo                      # "demo" or "production". Production refuses
+                                # synthetic data and unapproved specifications.
+decision_checkpoint_hours: 24   # Only 0 h and 24 h readings are used.
+
+spec_registry: config/spec_registry/DEMO_ONLY_v1.csv
+
+module_a:
+  flag_rule: robust            # robust | ensemble | either (docs/MODULE_A.md)
+  target_healthy_flag_rate: 0.02  # for the validation-set ensemble threshold
+  min_peers: 8                  # Fewer valid peers -> no trusted peer verdict.
+  robust_z_threshold: 3.5       # Modified z-score cut-off (Iglewicz & Hoaglin, 1993).
+  zero_mad_rel_tol: 1.0e-9      # MAD <= tol * max(1, |median|) is treated as zero.
+  reference_exceedance: 0.01    # Ensemble threshold = 99th percentile of the
+                                # ensemble score on reference (calibration) lots.
+  lot_shift_z_threshold: 4.0    # Lot median vs historical lot medians (robust z).
+  lot_spread_ratio_threshold: 3.0  # Lot MAD / historical median within-lot MAD.
+  isolation_forest:
+    n_estimators: 200
+    random_state: 26170
+  ensemble_weights:             # Weights applied to reference percentiles.
+    robust: 1.0
+    isolation_forest: 1.0
+    ecod: 1.0
+
+module_b:
+  quantiles: [0.05, 0.5, 0.95]
+  conformal_coverage: 0.90      # Target lot-level coverage on exchangeable lots.
+  domain_quantiles: [0.005, 0.995]  # Training-input range for domain checks.
+  lightgbm:
+    n_estimators: 120
+    max_depth: 4
+    num_leaves: 12
+    min_child_samples: 30
+    learning_rate: 0.05
+    random_state: 26170
+    n_jobs: 2
+    verbosity: -1
+
+decision:
+  predicted_violation_action: FAIL   # Whole interval beyond a limit. Reported
+                                     # with basis=PREDICTED, never as observed.
+  interval_crossing_action: ESCALATE
+
+paths:
+  models: models
+  runtime: runtime
