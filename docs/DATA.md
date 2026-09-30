@@ -32,6 +32,15 @@ fails if local-only datasets appear in committed files.
 
 Raw PDFs, archives (IGBT ZIP 240 MB, MAT files) and the 279 MB IGBT CSV are never committed.
 
+### Private migration backup (30 September 2026)
+
+At the team's request, the **complete original dataset package**, including local-only sources,
+is also preserved as an attachment to the private `migration-v1-2026-09-30` GitHub release.
+The table above describes what is committed to Git, not what is in that private backup.
+Source-specific terms are unchanged; do not make these attachments public without reviewing them.
+`data/dataset_release.json` pins the archive hashes, sizes and upstream repository. Follow
+[NEW_LAPTOP.md](NEW_LAPTOP.md) to restore all files and `data/local/`. IGBT stays quarantined.
+
 ## Loading
 
 A clone already contains everything the demo, tests and dashboard need. To add the local-only real tables from

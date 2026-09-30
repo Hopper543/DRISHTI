@@ -58,3 +58,21 @@ led to fixing table-cell wrapping.
   AppTest pages, not a live browser.
 * Evaluation counts for local-only real sources (NDS352, AD648, capacitor #14) cannot be reproduced from a clone
   without the dataset package.
+# Migration verification — 30 September 2026
+
+The private migration package adds a new-laptop setup helper, authenticated release restoration,
+archive SHA-256/path checks, local-only data restoration and a deterministic smoke check.
+Local verification on the existing Python 3.11 environment:
+
+- Full pytest suite passed, including archive corruption, unsafe paths, changed-file preservation
+  and idempotent restore checks, plus existing dashboard/PDF and screening tests.
+- The original 272,302,234-byte dataset ZIP matches its delivered SHA-256. Its 68 files were
+  extracted to a fresh directory; all 67 hashes listed by the package's verifier matched.
+- The research context archive restores 101 files and matches its pinned SHA-256.
+- `prepare_data.py --local-only` restores the full local data without rewriting tracked public data.
+- `setup_project.py --skip-install` passes the smoke check: 147 devices, 50 PASS, 1 FAIL,
+  96 ESCALATE; the full real-data loader returns 2,332 records.
+
+This local check reuses installed dependencies. Clean dependency installation is also exercised
+by the repository's Python 3.11/3.12 GitHub Actions jobs; their status is recorded on each commit.
+No real-world screening performance or new operating-system support is inferred from these checks.

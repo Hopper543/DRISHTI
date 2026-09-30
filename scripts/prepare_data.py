@@ -6,7 +6,7 @@ Writes
   data/demo/    SYNTHETIC fixtures (project generated; committed to Git)
   data/public/  real rows whose sources state public use / CC BY (committed)
   data/local/   full real tables incl. sources without an explicit reuse
-                statement, IGBT quarantine (git-ignored; never pushed)
+                statement, IGBT quarantine (git-ignored; private release backup only)
 
 Delivered-file SHA-256 values in the package's docs/file_checksums.json are
 verified before anything is copied. Values are never modified.
@@ -62,11 +62,24 @@ def read_real(pkg: Path, name: str) -> pd.DataFrame:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--package-dir", type=Path, required=True)
-    ap.add_argument("--skip-local", action="store_true", help="only write committed demo/public data")
+    group = ap.add_mutually_exclusive_group()
+    group.add_argument("--skip-local", action="store_true", help="only write committed demo/public data")
+    group.add_argument("--local-only", action="store_true", help="restore data/local without rewriting tracked data")
     a = ap.parse_args()
     pkg = a.package_dir.resolve()
     print("Verifying delivered checksums ...")
     verify(pkg)
+
+    if a.local_only:
+        local = ROOT / "data/local"
+        local.mkdir(parents=True, exist_ok=True)
+        for name in ("real_measurements", "real_drift_view"):
+            read_real(pkg, f"data/{name}.csv").to_parquet(local / f"{name}.parquet", index=False)
+        shutil.copy2(pkg / "data/real_device_folds.csv", local / "real_device_folds.csv")
+        shutil.copy2(pkg / "data/igbt_scalar_quarantined.parquet", local / "igbt_scalar_quarantined.parquet")
+        shutil.copy2(pkg / "docs/SOURCES.md", local / "SOURCES_package.md")
+        print("Restored data/local only. Tracked public/demo tables and models were not modified.")
+        return
 
     demo, public, local = ROOT / "data/demo", ROOT / "data/public", ROOT / "data/local"
     for d in (demo, public, local):

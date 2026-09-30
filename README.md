@@ -22,6 +22,20 @@
 
 ## Quick start (Windows PowerShell; Linux/macOS use `.venv/bin/python`)
 
+**Moving to a new laptop?** Follow [NEW_LAPTOP.md](docs/NEW_LAPTOP.md). The full 272 MB dataset plus 29 MB research archive are backed up as
+**private release attachments**; cloning Git alone retrieves the working demo/public subset.
+The PPT and original brief are in [docs/presentation/](docs/presentation/).
+
+After cloning and signing in with `gh auth login`, this installs, restores all collected data,
+verifies the demo and launches it (Python 3.11; substitute 3.12 if needed):
+
+```powershell
+py -3.11 scripts/setup_project.py --full-data --run
+```
+
+Linux/macOS: `python3.11 scripts/setup_project.py --full-data --run`.
+Omit `--full-data` for the smaller working demo. No retraining is needed.
+
 Tested with **Python 3.11.9** locally and with **3.11 and 3.12** in CI (Ubuntu). CPU only; no external APIs.
 
 ```bash
@@ -113,6 +127,7 @@ tests/          pytest suite incl. end-to-end and dashboard (AppTest) tests
 * [Evaluation](docs/EVALUATION.md) · [Model card and limitations](docs/MODEL_CARD.md)
 * [Data sources, provenance and licensing](docs/DATA.md)
 * [SIH demo script](docs/DEMO_SCRIPT.md) · [Testing and verification record](docs/TESTING.md)
+* [Video narration with verified values](docs/VIDEO_SCRIPT.md) · [New laptop / full-data restore](docs/NEW_LAPTOP.md)
 * Sample outputs: [PDF report](docs/sample_report/drishti_sample_report_SYNTHETIC.pdf),
   [CSV/JSON/audit](docs/sample_report/), [screenshots](docs/screenshots/)
 

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "repository": "Hopper543/DRISHTI",
+  "release_tag": "migration-v1-2026-09-30",
+  "visibility": "private",
+  "notes": "Complete existing dataset and historical research, for authenticated team migration. Third-party terms remain unchanged. Optional MOSFET #13 and capacitor #12 archives were never downloaded and are not included.",
+  "assets": [
+    {
+      "kind": "dataset",
+      "name": "DRISHTI_dataset_v1.zip",
+      "sha256": "5db4d0d69856c18af160036d94d5a53b048f96a1e4509b6ba208ebc328757997",
+      "bytes": 272302234,
+      "expanded_bytes": 572863244,
+      "file_count": 68,
+      "root": "drishti_dataset_v1"
+    },
+    {
+      "kind": "research",
+      "name": "DRISHTI_research_context_v1.zip",
+      "sha256": "7f965aada462d3e5e4bedc05f0cf8c0270ed495046df5082f18452c6eb9c6417",
+      "bytes": 29090158,
+      "expanded_bytes": 35650382,
+      "file_count": 101,
+      "root": "drishti_research_context"
+    }
+  ]
+}
