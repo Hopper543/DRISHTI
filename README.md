@@ -10,6 +10,9 @@
 
 ![Device analysis](docs/screenshots/04_device_SYN_L159_D009.png)
 
+**Live demo:** hosted on Streamlit Community Cloud — see [docs/DEPLOY.md](docs/DEPLOY.md) for the link setup.
+Press **▶ Load demo** in the sidebar.
+
 ## What it does
 
 | Part | What it does |
