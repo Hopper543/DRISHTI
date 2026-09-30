@@ -1,5 +1,7 @@
 """Restoration must reject corruption/traversal and preserve edited local data."""
 import hashlib
+import shutil
+import subprocess
 import zipfile
 
 import pytest
@@ -52,3 +54,20 @@ def test_download_reuses_verified_file_without_gh(tmp_path, monkeypatch):
     archive, asset = make_archive(tmp_path)
     monkeypatch.setattr("scripts.restore_assets.subprocess.run", lambda *a, **kw: pytest.fail("Unexpected network"))
     assert download(asset, {}, tmp_path, "unused/repo") == archive
+
+
+def test_download_retries_transport_failure_and_verifies_result(tmp_path, monkeypatch):
+    archive, asset = make_archive(tmp_path)
+    attempts = []
+    def fake_run(command, **kwargs):
+        attempts.append(command)
+        if len(attempts) == 1:
+            raise subprocess.CalledProcessError(1, command)
+        shutil.copy2(archive, command[-1] + "/" + asset["name"])
+    monkeypatch.setattr("scripts.restore_assets.subprocess.run", fake_run)
+    monkeypatch.setattr("scripts.restore_assets.shutil.which", lambda _: "gh")
+    monkeypatch.setattr("scripts.restore_assets.time.sleep", lambda _: None)
+    target = download(asset, {"release_tag": "test"}, tmp_path / "cache", "test/repo")
+    assert len(attempts) == 2
+    assert target.read_bytes() == archive.read_bytes()
+    assert sorted(p.name for p in target.parent.iterdir()) == [asset["name"]]

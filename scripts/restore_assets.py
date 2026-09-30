@@ -13,6 +13,7 @@ import stat
 import subprocess
 import sys
 import tempfile
+import time
 import zipfile
 from pathlib import Path, PurePosixPath
 
@@ -42,12 +43,21 @@ def download(asset: dict, manifest: dict, cache: Path, repository: str) -> Path:
         raise RuntimeError("Install GitHub CLI and run 'gh auth login', or supply --archive-dir.")
     if shutil.disk_usage(cache).free < asset["bytes"] + asset["expanded_bytes"] + 100 * 1024**2:
         raise RuntimeError(f"Insufficient space on the drive containing {cache}.")
-    with tempfile.TemporaryDirectory(prefix="download-", dir=cache) as tmp:
-        subprocess.run(["gh", "release", "download", manifest["release_tag"], "--repo", repository,
-                        "--pattern", asset["name"], "--dir", tmp], check=True)
-        candidate = Path(tmp) / asset["name"]
-        verify_archive(candidate, asset)
-        candidate.rename(target)
+    for attempt in range(1, 4):
+        with tempfile.TemporaryDirectory(prefix="download-", dir=cache) as tmp:
+            try:
+                subprocess.run(["gh", "release", "download", manifest["release_tag"], "--repo", repository,
+                                "--pattern", asset["name"], "--dir", tmp], check=True)
+            except subprocess.CalledProcessError:
+                if attempt == 3:
+                    raise
+                print(f"Download attempt {attempt} failed; retrying {asset['name']}.", flush=True)
+                time.sleep(2)
+                continue
+            candidate = Path(tmp) / asset["name"]
+            verify_archive(candidate, asset)
+            candidate.rename(target)
+            break
     return target
 
 
