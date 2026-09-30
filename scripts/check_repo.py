@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import pandas as pd  # noqa: E402
+import pyarrow.parquet as pq  # noqa: E402
 
 from drishti.provenance import DATASETS  # noqa: E402
 
@@ -34,7 +34,11 @@ def main() -> int:
     for name in ("real_measurements.parquet", "real_drift_view.parquet"):
         pub = ROOT / "data" / "public" / name
         if pub.exists():
-            bad = set(pd.read_parquet(pub, columns=["dataset_id"]).dataset_id) & local_only
+            # A short threaded Parquet read can abort during interpreter shutdown
+            # on Linux after printing OK (Arrow issue #34314). This tiny scan does
+            # not need worker threads or conversion through pandas.
+            ids = pq.read_table(pub, columns=["dataset_id"], use_threads=False)["dataset_id"].to_pylist()
+            bad = set(ids) & local_only
             if bad:
                 problems.append(f"{name} contains local-only datasets {sorted(bad)}")
     for p in problems:

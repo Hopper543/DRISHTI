@@ -76,3 +76,9 @@ Local verification on the existing Python 3.11 environment:
 This local check reuses installed dependencies. Clean dependency installation is also exercised
 by the repository's Python 3.11/3.12 GitHub Actions jobs; their status is recorded on each commit.
 No real-world screening performance or new operating-system support is inferred from these checks.
+
+The first migration CI run passed on Python 3.12 but the Python 3.11 hygiene process aborted
+at interpreter shutdown after reporting all 140 files OK. The lightweight Parquet scan now
+disables reader threads and avoids pandas conversion, following the workaround documented in
+[Apache Arrow issue 34314](https://github.com/apache/arrow/issues/34314). The source checks are
+unchanged; this addresses a native shutdown failure rather than suppressing a failed check.
